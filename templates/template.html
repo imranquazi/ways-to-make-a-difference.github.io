@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <title>Flask Parent Template</title>
+   <link rel="stylesheet" href="{{ url_for('static',     filename='css/template.css') }}">
+ </head>
+ <style type="text/css">
+	body {
+		text-align:center;
+		background-color: rgb(255,218,179);}
+	.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    background-color: none; 
+    color: black;
+    border: 2px solid #000000;
+}
+    .small-btn {
+        width: 50px;
+        height: 25px;
+    }
+	.button:hover {
+  	background-color: #d0f5f4;
+  	color: black;
+}
+	</style>
+ <body>
+    <header>
+      <div class="container">
+        
+            <p style="text-align:center;color:black" class = "button small-btn"><a href="{{ url_for('home') }}"  style="text-align:center;color:black">Home</a></p>
+        
+        
+            <p style="text-align:center;color:black" class = "button small-btn"><a href="{{ url_for('about') }}" style="text-align:center;color:black">About</a></p>
+        
+      </div>
+    </header>
+    
+    {% block content %}
+    {% endblock %}
+    
+ </body>
+</html>
